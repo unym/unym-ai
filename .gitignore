@@ -1,0 +1,29 @@
+.claude/
+.clinerules/
+_bmad/
+_bmad-output/
+
+# Dependencies
+node_modules
+.pnpm-store
+
+# Build outputs
+.next
+dist
+.wxt
+.output
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Turbo
+.turbo
+
+# Prisma generated client (run pnpm db:generate to rebuild)
+apps/web/lib/generated/
+
+# Misc
+.DS_Store
+*.log

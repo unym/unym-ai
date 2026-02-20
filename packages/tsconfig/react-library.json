@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "./base.json",
+  "compilerOptions": {
+    "lib": ["ES2020", "dom"],
+    "jsx": "react-jsx",
+    "noEmit": false
+  }
+}

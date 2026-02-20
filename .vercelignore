@@ -1,0 +1,6 @@
+_bmad/
+_bmad-output/
+docs/
+apps/extension/
+packages/
+*.md

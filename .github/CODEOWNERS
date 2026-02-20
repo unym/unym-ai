@@ -1,0 +1,10 @@
+# Default owner for everything in the repo
+* @guilfb
+
+# Core anonymization engine — requires careful review
+/packages/core/ @guilfb
+/apps/extension/entrypoints/ @guilfb
+
+# Infrastructure and deployment
+/.github/ @guilfb
+/apps/web/prisma/ @guilfb
