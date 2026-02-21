@@ -1,0 +1,37 @@
+# Dependencies
+node_modules
+**/node_modules
+
+# Next.js build output
+apps/web/.next
+apps/web/out
+
+# Prisma generated client (platform-specific, regenerated inside the container)
+apps/web/lib/generated
+
+# Extension build output
+apps/extension/.output
+apps/extension/.wxt
+
+# Git
+.git
+.gitignore
+
+# Env files (injected at runtime via docker-compose env_file)
+.env
+.env.local
+.env.*.local
+
+# Editor / OS
+.DS_Store
+*.swp
+.idea
+.vscode
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Turbo cache
+.turbo

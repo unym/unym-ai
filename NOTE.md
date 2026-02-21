@@ -20,3 +20,6 @@ Updates to apply to local bmad files :
    - `NEXT_PUBLIC_APP_URL` (your domain)
 6. Connect GitHub for auto-deploys on push to `main`
 7. Verify site loads on HTTPS domain and `/api/health` returns `{"status":"ok"}`
+
+FAIRE CODE REVIEW STORY 1.2
+IL MANQUE LE LOGOUT ?

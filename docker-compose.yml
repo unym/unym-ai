@@ -1,0 +1,48 @@
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: unym
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d unym"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      # Mount source for hot reload
+      - .:/app
+      # Protect installed node_modules from being overwritten by the host mount
+      - node_modules:/app/node_modules
+      # Protect Prisma generated client (built for linux inside the image, not darwin)
+      - prisma_generated:/app/apps/web/lib/generated
+      # Persist Next.js build cache across restarts
+      - next_cache:/app/apps/web/.next
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      # Override DATABASE_URL to point to the compose postgres service
+      DATABASE_URL: postgresql://postgres:postgres@db:5432/unym
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  pgdata:
+  node_modules:
+  prisma_generated:
+  next_cache:
