@@ -27,3 +27,5 @@ apps/web/lib/generated/
 # Misc
 .DS_Store
 *.log
+
+packages/core/models/*

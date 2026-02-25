@@ -17,6 +17,17 @@
     "node": ">=20"
   },
   "pnpm": {
-    "onlyBuiltDependencies": ["@prisma/engines", "@prisma/client", "prisma", "esbuild", "sharp"]
+    "onlyBuiltDependencies": [
+      "@prisma/client",
+      "@prisma/engines",
+      "@sentry/cli",
+      "esbuild",
+      "msw",
+      "prisma",
+      "protobufjs",
+      "sharp",
+      "spawn-sync",
+      "unrs-resolver"
+    ]
   }
 }
